@@ -2,7 +2,7 @@ package services;
 
 import java.security.InvalidParameterException;
 
-public class BrasilTaxaService {
+public class BrasilTaxaService implements TaxaJurosService {
 	
 	private double taxaJuros;
 
@@ -10,6 +10,7 @@ public class BrasilTaxaService {
 		this.taxaJuros = taxaJuros;
 	}
 
+	@Override
 	public double getTaxaJuros() {
 		return taxaJuros;
 	}
@@ -18,6 +19,7 @@ public class BrasilTaxaService {
 		this.taxaJuros = taxaJuros;
 	}
 	
+	@Override
 	public double pagamento(double valor, int meses) {
 		if(meses < 1) {
 			throw new InvalidParameterException("Meses tem que ser maior que zero");

@@ -3,6 +3,7 @@ package aplicacao;
 import java.util.Locale;
 import java.util.Scanner;
 
+import services.TaxaJurosService;
 import services.UsaTaxaService;
 
 public class Programa {
@@ -17,7 +18,7 @@ public class Programa {
 		System.out.print("Meses> ");
 		int meses = sc.nextInt();
 		
-		UsaTaxaService sb = new UsaTaxaService(1.0);
+		TaxaJurosService sb = new UsaTaxaService(1.0);
 		double pagamento = sb.pagamento(montante, meses);
 		
 		System.out.println("Pagamento depois de "+ meses + " meses:");
